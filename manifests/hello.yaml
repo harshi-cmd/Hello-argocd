@@ -49,8 +49,3 @@ spec:
   ports:
   - port: 80
     targetPort: 80
-
-    app: hello
-  ports:
-  - port: 80
-    targetPort: 80
