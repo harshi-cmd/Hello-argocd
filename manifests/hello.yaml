@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: hello-message
-  namespace: default
+  namespace: hello-app
 data:
   MESSAGE: "Hello world"
 ---
@@ -10,7 +10,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hello-deploy
-  namespace: default
+  namespace: hello-app
 spec:
   replicas: 1
   selector:
@@ -41,10 +41,15 @@ apiVersion: v1
 kind: Service
 metadata:
   name: hello-service
-  namespace: default
+  namespace: hello-app
 spec:
   type: ClusterIP
   selector:
+    app: hello
+  ports:
+  - port: 80
+    targetPort: 80
+
     app: hello
   ports:
   - port: 80
