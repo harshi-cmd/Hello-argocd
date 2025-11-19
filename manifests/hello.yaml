@@ -4,7 +4,7 @@ metadata:
   name: hello-message
   namespace: hello-app
 data:
-  MESSAGE: "Hello world"
+  MESSAGE: "updated message...hello..."
 ---
 apiVersion: apps/v1
 kind: Deployment
